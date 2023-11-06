@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+
+{% block title_block %} Create a new account {% endblock %}
+{% block body %}
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style_2.css' %}">
+
+
+    <br>
+    <br>
+
+    <style>
+        .left {
+            float: left;
+            color: crimson;
+        }
+
+        .right {
+            float: right;
+        }
+
+        .clear {
+            clear: both;
+        }
+    </style>
+
+    <h1 class="left">Fractalslab</h1>
+    <p class="right">Basket total: ৳0.00</p>
+    <div class="clear"></div>
+    <br>
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Action 1</a>
+                <a class="dropdown-item" href="#">Action 2</a>
+                <a class="dropdown-item" href="#">Action 3</a>
+            </div>
+        </div>
+
+        <form class="form-inline">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </nav>
+    <br>
+    <br>
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Library</li>
+        </ol>
+    </nav>
+    <br>
+
+
+
+    <div class="product-details">
+        <h1>Product Details</h1>
+        <div class="product-info">
+            <div class="product-image-box">
+                <img src="{{ product_details.image.url }}" alt="{{ product_details.name }}">
+            </div>
+
+            <div class="product-price">
+                <h1>{{ product_details.name }}</h1>
+                <p>Price: {{ product_details.price }}</p>
+            </div>
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <table class="table table-bodered">
+
+            <tr>
+                <th>Price</th>
+                <td>{{ product_details.price }}</td>
+
+            </tr>
+
+            <tr>
+                <th>Quantity</th>
+                <td>{{ product_details.quantity }}</td>
+
+
+            </tr>
+
+
+        </table>
+    </div>
+{% endblock %}
+
+
+
+

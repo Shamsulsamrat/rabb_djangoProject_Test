@@ -1,0 +1,60 @@
+/* style1.css */
+
+/* Style the product list container */
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+}
+
+/* Style each individual product item to take 25% of the page width */
+.product-item {
+    width: 25%; /* Display four items per row */
+    margin: 1% 0;
+    padding: 10px;
+    box-sizing: border-box; /* Include padding in width calculation */
+    border: 1px solid #ddd;
+    text-align: center; /* Center align items within the container */
+    max-height: 300px; /* Set a maximum height for the product item */
+    overflow: hidden; /* Hide content that overflows the container */
+}
+
+.product-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Style the product info (name and description) */
+.product-info {
+    padding: 10px;
+    text-align: left;
+}
+
+.product-info h2 {
+    margin: 0;
+    font-size: 1.2em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.product-info p {
+    margin: 0;
+    font-size: 1em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Style the "Read More" link */
+.product-item a {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 5px 10px;
+    text-decoration: none;
+    margin-top: 10px;
+    border-radius: 5px;
+}

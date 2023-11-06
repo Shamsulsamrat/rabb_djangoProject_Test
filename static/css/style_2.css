@@ -1,0 +1,27 @@
+.product-details {
+    text-align: center;
+    margin: 20px;
+}
+
+.product-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-image-box {
+    flex: 1;
+    border: 1px solid #ccc; /* Add a border for the image box */
+    padding: 10px; /* Add padding to the image box */
+    text-align: center;
+}
+
+.product-image-box img {
+    max-width: 100%; /* Make sure the image doesn't exceed the box */
+}
+
+.product-price {
+    flex: 1;
+    text-align: center;
+}
+
+

@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+
+{% block title_block %} Create a new account {% endblock %}
+
+{% block body %}
+    <br>
+    <br>
+    <h1 class="left">Fractalslab</h1>
+    <p class="right">Basket total: ৳0.00</p>
+    <div class="clear"></div>
+    <br>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Action 1</a>
+                <a class="dropdown-item" href="#">Action 2</a>
+                <a class ="dropdown-item" href="#">Action 3</a>
+            </div>
+        </div>
+
+        <form class="form-inline">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </nav>
+    <br>
+    <br>
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Library</li>
+        </ol>
+    </nav>
+    <br>
+
+
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="categories">
+                    <h3>Categories</h3>
+                    {% for i in category %}
+                        <p>{{ i.name }}</p>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="col-md-9">
+                <h1>All Product</h1>
+                <p>Total product: {{ product_list.count }}</p>
+
+                <div class="row">
+                    {% for product in product_list %}
+                        <div class="col-md-4">
+                            <div class="product-item text-center">
+                                <img src="{{ product.image.url }}" alt="{{ product.name }}" height="150px"
+                                     width="130px">
+                                <br>
+                                <br>
+                                <h5 class="truncate-text" title="{{ product.name }}">
+                                    <a href="{% url 'product_details' pk=product.id %}">{{ product.name }}</a>
+                                </h5>
+                                <p class="text-center" title="{{ product.price }}">৳{{ product.price }}</p>
+                                <p style="color: green;"><img src="/media/images/2.png" class="rounded-circle"
+                                                              width="20px">In stock</p>
+                                <p>
+                                    <a href="{% url 'product_details' pk=product.id %}" class="btn btn-primary">Add to
+                                        Basket</a>
+                                </p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <style>
+
+
+        .left {
+            float: left;
+            color: crimson;
+        }
+        .right {
+            float: right;
+        }
+        .clear {
+            clear: both;
+        }
+
+        .product-item {
+            border: none; /* Remove the border */
+            padding: 15px; /* Add padding for spacing */
+        }
+
+        .categories {
+            border: 1px solid #ccc; /* Add a border to the categories section */
+            padding: 15px;
+        }
+    </style>
+{% endblock %}
