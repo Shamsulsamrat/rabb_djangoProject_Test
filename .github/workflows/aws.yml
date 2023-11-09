@@ -31,8 +31,8 @@ on:
     branches: [ "main" ]
 
 env:
-  AWS_REGION: us-east-2                  # set this to your preferred AWS region, e.g. us-west-1
-  ECR_REPOSITORY: mynginix_new          # set this to your Amazon ECR repository name
+  AWS_REGION: us-east-1                  # set this to your preferred AWS region, e.g. us-west-1
+  ECR_REPOSITORY: mynginix         # set this to your Amazon ECR repository name
   CONTAINER_NAME: rabbi_django           # set this to the name of the container in the
                                                # containerDefinitions section of your task definition
 
